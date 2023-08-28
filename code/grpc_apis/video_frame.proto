@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "AIHub.RPC";
+
+package aihub;
+
+service VideoCapture{
+  rpc GetResultBuffer (InputFrame) returns (OutputFrame);
+}
+
+message InputFrame {
+  string base64buffer = 1;
+}
+
+message OutputFrame {
+  string base64buffer = 1;
+}

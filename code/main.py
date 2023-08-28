@@ -1,6 +1,6 @@
-import videoprocess as vp
-import trainingsetprocess as tp
-import videocapture as vc
+import video_process as vp
+import training_set_process as tp
+import video_capture as vc
 
 if __name__ == '__main__':
     while True:

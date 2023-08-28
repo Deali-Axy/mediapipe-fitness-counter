@@ -1,6 +1,6 @@
-import poseembedding as pe                      # 姿态关键点编码模块
-import poseclassifier as pc                     # 姿态分类器
-import extracttrainingsetkeypoints as ek        # 提取训练集关键点特征
+import pose_embedding as pe                      # 姿态关键点编码模块
+import pose_classifier as pc                     # 姿态分类器
+import extract_training_set_keypoints as ek        # 提取训练集关键点特征
 import csv
 import os
 
