@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from . import video_frame_pb2 as video__frame__pb2
 
 
@@ -19,12 +20,23 @@ class VideoCaptureStub(object):
                 request_serializer=video__frame__pb2.InputFrame.SerializeToString,
                 response_deserializer=video__frame__pb2.OutputFrame.FromString,
                 )
+        self.Reset = channel.unary_unary(
+                '/aihub.VideoCapture/Reset',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class VideoCaptureServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetResultBuffer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Reset(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +49,11 @@ def add_VideoCaptureServicer_to_server(servicer, server):
                     servicer.GetResultBuffer,
                     request_deserializer=video__frame__pb2.InputFrame.FromString,
                     response_serializer=video__frame__pb2.OutputFrame.SerializeToString,
+            ),
+            'Reset': grpc.unary_unary_rpc_method_handler(
+                    servicer.Reset,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +79,22 @@ class VideoCapture(object):
         return grpc.experimental.unary_unary(request, target, '/aihub.VideoCapture/GetResultBuffer',
             video__frame__pb2.InputFrame.SerializeToString,
             video__frame__pb2.OutputFrame.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Reset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/aihub.VideoCapture/Reset',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

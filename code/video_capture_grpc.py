@@ -178,6 +178,10 @@ class VideoCapture(video_frame_pb2_grpc.VideoCaptureServicer):
 
         return video_frame_pb2.OutputFrame(base64buffer=pil_image_to_base64(output_img))
 
+    def Reset(self, request, context):
+        self.repetition_counter.clear()
+        return video_frame_pb2_grpc.google_dot_protobuf_dot_empty__pb2.Empty()
+
 
 def serve():
     port = '50055'

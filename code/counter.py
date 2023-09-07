@@ -12,7 +12,7 @@ class RepetitionCounter(object):
         # 是否处于给定的姿势
         self._pose_entered = False
 
-        # 退出姿势的次数
+        # 推出姿势的次数
         self._n_repeats = 0
 
     @property
@@ -50,3 +50,7 @@ class RepetitionCounter(object):
             self._pose_entered = False
 
         return self._n_repeats
+
+    def clear(self):
+        """清除计数"""
+        self._n_repeats = 0

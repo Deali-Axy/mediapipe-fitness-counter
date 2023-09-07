@@ -11,10 +11,11 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11video_frame.proto\x12\x05\x61ihub\x1a\x1egoogle/protobuf/wrappers.proto\"\"\n\nInputFrame\x12\x14\n\x0c\x62\x61se64buffer\x18\x01 \x01(\t\"#\n\x0bOutputFrame\x12\x14\n\x0c\x62\x61se64buffer\x18\x01 \x01(\t2H\n\x0cVideoCapture\x12\x38\n\x0fGetResultBuffer\x12\x11.aihub.InputFrame\x1a\x12.aihub.OutputFrameB\x0c\xaa\x02\tAIHub.RPCb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11video_frame.proto\x12\x05\x61ihub\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\"\n\nInputFrame\x12\x14\n\x0c\x62\x61se64buffer\x18\x01 \x01(\t\"#\n\x0bOutputFrame\x12\x14\n\x0c\x62\x61se64buffer\x18\x01 \x01(\t2\x81\x01\n\x0cVideoCapture\x12\x38\n\x0fGetResultBuffer\x12\x11.aihub.InputFrame\x1a\x12.aihub.OutputFrame\x12\x37\n\x05Reset\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.EmptyB\x0c\xaa\x02\tAIHub.RPCb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,10 +24,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\252\002\tAIHub.RPC'
-  _globals['_INPUTFRAME']._serialized_start=60
-  _globals['_INPUTFRAME']._serialized_end=94
-  _globals['_OUTPUTFRAME']._serialized_start=96
-  _globals['_OUTPUTFRAME']._serialized_end=131
-  _globals['_VIDEOCAPTURE']._serialized_start=133
-  _globals['_VIDEOCAPTURE']._serialized_end=205
+  _globals['_INPUTFRAME']._serialized_start=89
+  _globals['_INPUTFRAME']._serialized_end=123
+  _globals['_OUTPUTFRAME']._serialized_start=125
+  _globals['_OUTPUTFRAME']._serialized_end=160
+  _globals['_VIDEOCAPTURE']._serialized_start=163
+  _globals['_VIDEOCAPTURE']._serialized_end=292
 # @@protoc_insertion_point(module_scope)
