@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dd71fe9d-1f62-4584-a3b2-9389a2aa0dc4" name="185">
+        <fileTransfer rootFolder="/home/stu/code/fitness" accessType="SFTP" host="sblt.dou3.net" port="18522" sshConfigId="ce8bd5ab-9f32-4887-8fc6-2ad4045bb48c" sshConfig="stu@sblt.dou3.net:18522 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
